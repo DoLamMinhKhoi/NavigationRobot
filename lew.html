@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sơ đồ cơ sở LEWIS</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .house {
+      width: calc(120vh * 1 / 3);
+      height: 120vh;
+      position: relative;
+    }
+
+    .floor, .basement {
+      width: 162px;
+      height: 90px;
+      border: 1px solid black;
+      text-align: center;
+      line-height: 90px;
+      transform: skewX(-55deg);
+      position: absolute;
+      transition: transform 0.3s ease;
+    }
+
+    .floor:hover, .basement:hover {
+      transform: scale(2);
+      z-index: 1;
+    }
+
+    .floor.inactive, .basement.inactive {
+      display: none;
+    }
+
+    .floor:hover + .floor, .basement:hover + .basement {
+      transform: scale(1);
+    }
+
+    .floor:nth-child(even) {
+      background-color: #f0f0f0;
+    }
+
+    .floor:nth-child(odd) {
+      background-color: #e0e0e0;
+    }
+
+    .room {
+      position: absolute;
+      border: 0.5px solid black;
+      background-color: rgb(242, 255, 0);
+    }
+
+    .toilet {
+      background-color: lightblue;
+    }
+    
+    .stairs {
+      background-color: lightgreen;
+    }
+    .electrical {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+
+<div class="house">
+  <div class="basement" style="top: 710px;">
+    <div class="room electrical" style="top: 0px; left: 146px; width: 15px; height: 10px;"></div>
+    <div class="room stairs" style="top: 10px; left: 146px; width: 15px; height: 21px;"></div>
+    Hầm gửi xe
+  </div>
+  <div class="floor" style="top: 620px;">
+    <div class="room" style="top: 0px; left: 0px; width: 30px; height: 70px;"></div>
+    <div class="room" style="top: 0px; left: 50px; width: 55px; height: 38px;"></div>
+    <div class="room toilet" style="top: 16px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room toilet" style="top: 0px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room electrical" style="top: 0px; left: 146px; width: 15px; height: 10px;"></div>
+    <div class="room stairs" style="top: 10px; left: 146px; width: 15px; height: 21px;"></div>
+    <div class="room stairs" style="top: 35px; left: 146px; width: 15px; height: 14.5px;"></div>
+    <div class="room stairs" style="top: 49px; left: 146px; width: 15px; height: 14.5px;"></div>
+    <div class="room stairs" style="top: 68px; left: 146px; width: 15px; height: 21px;"></div>
+    Tầng trệt
+  </div>
+  <div class="floor" style="top: 530px;">
+    <div class="room" style="top: 0px; left: 0px; width: 54px; height: 60px;"></div>
+    <div class="room" style="top: 0px; left: 55px; width: 55px; height: 38px;"></div>
+    <div class="room toilet" style="top: 16px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room toilet" style="top: 0px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room electrical" style="top: 0px; left: 146px; width: 15px; height: 10px;"></div>
+    <div class="room stairs" style="top: 10px; left: 146px; width: 15px; height: 21px;"></div>
+    <div class="room stairs" style="top: 35px; left: 146px; width: 15px; height: 14.5px;"></div>
+    <div class="room stairs" style="top: 49px; left: 146px; width: 15px; height: 14.5px;"></div>
+    <div class="room stairs" style="top: 68px; left: 146px; width: 15px; height: 21px;"></div>
+    Tầng 1
+  </div>
+  <div class="floor" style="top: 440px;">
+    <div class="room" style="top: 0px; left: 0px; width: 54px; height: 44px;"></div>
+    <div class="room" style="top: 44px; left: 0px; width: 54px; height: 45px;"></div>
+    <div class="room" style="top: 0px; left: 55px; width: 55px; height: 38px;"></div>
+    <div class="room" style="top: 57px; left: 55px; width: 55px; height: 32px;"></div>
+    <div class="room" style="top: 69px; left: 111px; width: 35px; height: 20px;"></div>
+    <div class="room toilet" style="top: 16px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room toilet" style="top: 0px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room electrical" style="top: 0px; left: 146px; width: 15px; height: 10px;"></div>
+    <div class="room stairs" style="top: 10px; left: 146px; width: 15px; height: 21px;"></div>
+    <div class="room stairs" style="top: 35px; left: 146px; width: 15px; height: 14.5px;"></div>
+    <div class="room stairs" style="top: 49px; left: 146px; width: 15px; height: 14.5px;"></div>
+    <div class="room stairs" style="top: 68px; left: 146px; width: 15px; height: 21px;"></div>
+    Tầng 2
+  </div>
+  <div class="floor" style="top: 350px;">
+    <div class="room" style="top: 0px; left: 0px; width: 110px; height: 38px;"></div>
+    <div class="room" style="top: 57px; left: 0px; width: 55px; height: 32px;"></div>
+    <div class="room" style="top: 57px; left: 55px; width: 55px; height: 32px;"></div>
+    <div class="room" style="top: 69px; left: 111px; width: 35px; height: 20px;"></div>
+    <div class="room toilet" style="top: 16px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room toilet" style="top: 0px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room electrical" style="top: 0px; left: 146px; width: 15px; height: 10px;"></div>
+    <div class="room stairs" style="top: 10px; left: 146px; width: 15px; height: 21px;"></div>
+    <div class="room stairs" style="top: 35px; left: 146px; width: 15px; height: 14.5px;"></div>
+    <div class="room stairs" style="top: 49px; left: 146px; width: 15px; height: 14.5px;"></div>
+    <div class="room stairs" style="top: 68px; left: 146px; width: 15px; height: 21px;"></div>
+    Tầng 3
+  </div>
+  <div class="floor" style="top: 260px;">
+    <div class="room" style="top: 0px; left: 0px; width: 55px; height: 38px;"></div>
+    <div class="room" style="top: 57px; left: 0px; width: 55px; height: 32px;"></div>
+    <div class="room" style="top: 0px; left: 55px; width: 55px; height: 38px;"></div>
+    <div class="room" style="top: 57px; left: 55px; width: 55px; height: 32px;"></div>
+    <div class="room" style="top: 69px; left: 111px; width: 35px; height: 20px;"></div>
+    <div class="room toilet" style="top: 16px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room toilet" style="top: 0px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room electrical" style="top: 0px; left: 146px; width: 15px; height: 10px;"></div>
+    <div class="room stairs" style="top: 10px; left: 146px; width: 15px; height: 21px;"></div>
+    <div class="room stairs" style="top: 35px; left: 146px; width: 15px; height: 14.5px;"></div>
+    <div class="room stairs" style="top: 49px; left: 146px; width: 15px; height: 14.5px;"></div>
+    <div class="room stairs" style="top: 68px; left: 146px; width: 15px; height: 21px;"></div>
+    Tầng 4
+  </div>
+
+  <div class="floor" style="top: 170px; position: relative;">
+    <div class="room" style="top: 0px; left: 0px; width: 55px; height: 38px;"></div>
+    <div class="room" style="top: 57px; left: 0px; width: 55px; height: 32px;"></div>
+    <div class="room" style="top: 0px; left: 55px; width: 55px; height: 38px;"></div>
+    <div class="room" style="top: 57px; left: 55px; width: 55px; height: 32px;"></div>
+    <div class="room" style="top: 69px; left: 111px; width: 35px; height: 20px;"></div>
+    <div class="room toilet" style="top: 16px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room toilet" style="top: 0px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room electrical" style="top: 0px; left: 146px; width: 15px; height: 10px;"></div>
+    <div class="room stairs" style="top: 10px; left: 146px; width: 15px; height: 21px;"></div>
+    <div class="room stairs" style="top: 35px; left: 146px; width: 15px; height: 14.5px;"></div>
+    <div class="room stairs" style="top: 49px; left: 146px; width: 15px; height: 14.5px;"></div>
+    <div class="room stairs" style="top: 68px; left: 146px; width: 15px; height: 21px;"></div>
+    Tầng 5
+  </div>
+
+  <div class="floor" style="top: 80px;">
+    <div class="room toilet" style="top: 16px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room toilet" style="top: 0px; left: 111px; width: 25px; height: 12px;"></div>
+    <div class="room electrical" style="top: 0px; left: 146px; width: 15px; height: 10px;"></div>
+    <div class="room stairs" style="top: 10px; left: 146px; width: 15px; height: 21px;"></div>
+    Tầng thượng
+  </div>
+</div>
+
+<script>
+  const floors = document.querySelectorAll('.floor, .basement');
+
+  floors.forEach(floor => {
+    floor.addEventListener('mouseenter', () => {
+      floors.forEach(otherFloor => {
+        if (otherFloor !== floor) {
+          otherFloor.classList.add('inactive');
+        }
+      });
+    });
+
+    floor.addEventListener('mouseleave', () => {
+      floors.forEach(otherFloor => {
+        if (otherFloor !== floor) {
+          otherFloor.classList.remove('inactive');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
